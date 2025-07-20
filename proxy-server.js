@@ -7,6 +7,10 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+  app.get('/test', (req, res) => {
+    res.json({ message: 'Test route works!' });
+  });
+
 app.get('/api/places', async (req, res) => {
   try {
     const { location, radius, type, key } = req.query;
